@@ -1,0 +1,22 @@
+<%- include ("../partials/header.ejs") %> 
+<div class="container"> <hr> 
+    <div class="card"> 
+        <div class="card-header"> 
+            <h2>Alteração de Funcionario</h2> 
+</div> 
+ <div class="card-body"> 
+
+ <form method="POST" action="/updatefunc">
+  Nome Funcionário<br>
+ <input class="form-control" type="text" name="nome" value="<%= funcionario.nome %>"><br>
+  Setor Funcionário<br> 
+ <input class="form-control" type="text" name="setor" value="<%= funcionario.setor %>"><br>
+  Salário Funcionário<br>
+ <input class="form-control" type="text" name="salario" value="<%= funcionario.salario %>"><br>
+ <input type="hidden" name="id" value="<%= funcionario.id_funcionario %>"> 
+ <button class="btn btn-success">Alterar</button> 
+ </form> 
+
+ </div> 
+ </div> 
+</div> 

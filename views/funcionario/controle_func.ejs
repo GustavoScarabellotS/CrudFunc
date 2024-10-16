@@ -1,0 +1,47 @@
+<%- include ("../partials/header.ejs") %>
+<div class="container">
+<hr/>
+<h2>Lista de Funcionários</h2>
+<a class="btn btn-success" href="/novo">Cadastrar Novo Funcionário</a>
+<hr />
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Id</th>
+<th>Nome</th>
+<th>Setor</th>
+<th>Salário</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+    <% funcionario.forEach((funcio)=>{ %>
+        <tr> 
+        <th><%= funcio.id_funcionario %></th> 
+        <th><%= funcio.nome %></th> 
+        <th><%= funcio.setor %></th> 
+        <th> R$ <%= funcio.salario %></th> 
+        <th> 
+        <a href="editafunc/<%= funcio.id_funcionario %>" class="btn btn-warning">Editar</a> 
+       
+        <form method="POST" action="/deletafunc" style="display: inline" onsubmit="confirmaDeleta(event,this)"> 
+          <input type="hidden" name="id" value="<%= funcio.id_funcionario %>" /> 
+          <button class="btn btn-danger">Deletar</button> 
+        </form> 
+        </th>
+        <% }) %> 
+</tbody>
+</table>
+<div align="center">
+<a class="btn btn-warning" href="/">Voltar Menu</a>
+</div>
+</div>
+<script>
+   function confirmaDeleta(event,formulario){
+      event.preventDefault();
+      decisao = confirm("Confirma exclusão?")
+      if(decisao){
+         formulario.submit();
+      }
+   }
+</script>

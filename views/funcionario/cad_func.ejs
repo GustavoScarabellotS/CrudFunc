@@ -1,0 +1,23 @@
+<%- include ("../partials/header.ejs") %>
+<div class="container">
+<hr>
+<div class="card">
+<div class="card-header">
+<h2>Cadastro do Funcionário</h2>
+</div>
+<div class="card-body">
+<form method="POST" action="/salvafunc">
+Nome Funcionário<br>
+<input class="form-control" type="text" name="nome">
+Setor Funcionário<br>
+<input class="form-control" type="text" name="setor">
+Salário Funcionário<br>
+<input class="form-control" type="text" name="salario">
+<br>
+<button class="btn btn-success">Cadastrar</button>
+<a href="/controlefuncionario"><button type="button" class="btn btn-secondary">Lista</button></a>
+<a class="btn btn-warning" href="/">Voltar Menu</a>
+</form>
+</div>
+</div>
+</div>
